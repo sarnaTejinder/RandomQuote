@@ -33,4 +33,52 @@
         <a target="_blank" href="https://github.com/sarnaTejinder">
             Tejinder Sarna<i class="uil uil-github"></i></a></p>
 </footer>
+<script>
+    const quote = document.querySelector(".quote")
+    const author = document.querySelector(".author")
+    const button  = document.querySelector('.button')
+    function apicall (){fetch("http://api.quotable.io/random?maxLength=60")
+    .then(response => response.json()
+    ).then(data => {
+        quote.innerHTML = `"${data.content}"`
+    author.innerHTML = ` - ${data.author}`})
+    .catch(err => {
+	console.error(err);
+});}
+
+button.addEventListener('click',()=>{
+    apicall();
+})
+
+apicall()
+
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+const imgDiv = document.querySelector('.img-div')
+
+const selectedTheme = ''
+const selectedIcon = ''
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+}
+const arr = [
+    "url('./light.jpg')",
+    "url('./dark.jpg')"
+]
+let count = 0;
+themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    count++;
+    imgDiv.style.backgroundImage = arr[count%2]
+})
+
+
+</script>
 </html>
