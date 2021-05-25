@@ -9,8 +9,9 @@ html{
     height: 100%;
 }
 
-a{
+a,a:visited{
     text-decoration: none;
+    color:var(--text-color);
 }
 
 :root{
