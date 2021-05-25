@@ -112,10 +112,6 @@ i{
     margin: 10px 0px;
 }
 
-.button:hover{
-    background-color: var(--first-color);
-    color: white;
-}
 
 .img-div{
     display: none;
@@ -191,6 +187,11 @@ i{
         padding: 10px 20px;
         align-self: center;
     }
+    .button:hover{
+    background-color: var(--first-color);
+    color: white;
+}
+
     .quote{
         padding: 0;
     }
