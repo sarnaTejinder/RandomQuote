@@ -1,0 +1,197 @@
+
+*{
+    margin: 0%;
+    background-color: var(--bg-color);
+    transition: color 0.3s;
+
+}
+html{
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --hue-color:283;
+    --first-color:hsl(var(--hue-color),30%,80%);
+    --text-color:#52057b ;
+    --quote-color:#00000;
+    --bg-color: #f4f2f3;
+    --button-bg:hsl(var(--hue-color),30%,60%);
+    --button-text:#892cdc;
+    --border-color:#000;
+}
+body{
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    
+}
+
+body.dark-theme{
+    --hue-color:283;
+    --first-color:hsl(var(--hue-color),30%,8%);
+    --text-color:#892cdc ;
+    --quote-color:rgb(216, 216, 216);
+    --button-bg:hsl(var(--hue-color),30%,60%);
+    --button-text:#892cdc;
+    --bg-color: #000;
+    --border-color:#fff;
+    background-color: var(--bg-color);
+}
+
+p {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+
+.button{
+    color: var(--button-text);
+    font-weight: 550;
+    width: 40vw;
+    border: 0;
+    height: 2.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color:var(--button-bg);
+    outline: none;
+    color: black ;
+    transition: background-color 0.3s ,color 0.3s;
+}
+header{
+    color: var(--text-color);
+    position: fixed;
+    width: 100vw;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    align-items: center;
+}
+ 
+i{
+    color: var(--text-color);
+    margin: 5px;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.card,.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    /* background-color: plum; */
+}
+
+.quote{
+    font-size: 1.8rem;
+    display: inline;
+    line-height: 2.5rem;
+    padding: 8px;
+    text-align: center;
+    color: var(--quote-color);
+    letter-spacing: 0.2rem;
+}
+
+.author{
+    font-size: 1.3rem;
+    color: rgb(109, 109, 109);
+    margin: 10px 0px;
+}
+
+.button:hover{
+    background-color: var(--first-color);
+    color: white;
+}
+
+.img-div{
+    display: none;
+}
+
+@media screen and (min-width: 700px) {
+    :root{
+        --hue-color:276;
+        --first-color:hsl(var(--hue-color),30%,80%);
+        --text-color:#52057b ;
+        --quote-color:#00000;
+        --bg-color: #f4f2f3;
+        --border-color:#000;
+        --button-bg:hsl(var(--hue-color),30%,60%);
+        --button-text:#892cdc;
+    }
+    body{
+        height: 100%;
+        align-content: center;
+        justify-content: center;
+        background-color: var(--bg-color);
+    }
+
+    body.dark-theme{
+        --hue-color:283;
+        --first-color:hsl(var(--hue-color),30%,8%);
+        --text-color:#892cdc ;
+        --quote-color:rgb(216, 216, 216);
+        --button-bg:hsl(var(--hue-color),30%,60%);
+        --button-text:#892cdc;
+        --bg-color: #000;
+        --border-color:#fff;
+        background-color: var(--bg-color);
+    }
+    .container{
+        padding-top: 20vh;
+        margin: auto;
+        box-sizing: border-box;
+        width: 600px;
+        height: auto;
+        flex-direction: row;
+    }
+    .img-div,.card{
+        padding: 5px;
+        width: 350px;
+        height: 400px;
+        display: inline;
+        margin: 5px;
+    }
+    header{
+        color: var(--text-color);
+        position: fixed;
+        width: 100vw;
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0px;
+        align-items: center;
+    }
+
+    .img-div{
+        border: 1px solid var(--border-color);
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.3s ease-in-out;
+    }
+    p{
+        color: var(--text-color)
+    }
+    
+    .button{
+        width: auto;
+        padding: 10px 20px;
+        align-self: center;
+    }
+    .quote{
+        padding: 0;
+    }
+}
